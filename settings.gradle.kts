@@ -1,3 +1,3 @@
-rootProject.name = "yavin-app"
+rootProject.name = "customized-yavin-app-demo"
 
 include("ui", "ws")

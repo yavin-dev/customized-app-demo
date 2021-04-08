@@ -3,23 +3,20 @@
     <img alt="yavin-logo" src="assets/yavin-logo-transparent.svg" height="150px"/>
   </a>
 </p>
-<h1 align="center">Yavin</h1>
+<h1 align="center">Customized Yavin App Demo</h1>
 <p align="center">Rapidly build production quality analytics applications</p>
 <p align="center">
     <a href="https://yavin.dev">Docs</a> - <a href="https://yavin-dev.github.io/framework">Demo</a> - <a href="https://github.com/yavin-dev/framework/discussions">Community</a>
 </p>
 
-## Yavin App
+## Customized Yavin App Demo
 
-Yavin is a framework for rapidly building custom data applications that offers both a UI and an API. Yavin can also be deployed as a standalone business intelligence tool in a few simple steps. Build reports, assemble dashboards, and explore data with ad-hoc queries.
-
-This is an example app built using the [Yavin Framework](https://github.com/yavin-dev/framework) showing a [Netflix dataset](https://www.kaggle.com/shivamb/netflix-shows) that is sourced from [Kaggle](https://www.kaggle.com/) data.
-
+This is an demo Yavin app to showcase how Yavin can be customize.
 ## Getting Started
 
 -  Install Java 8 or greater (more info [here](https://yavin.dev/pages/guide/02-start.html#prerequisites))
-- `git clone https://github.com/yavin-dev/app.git`
-- `cd yavin-app`
+- `git clone https://github.com/yavin-dev/customized-app-demo.git`
+- `cd customized-app-demo`
 
 ### Start Yavin App
 
