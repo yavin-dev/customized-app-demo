@@ -108,4 +108,18 @@
         );
         </sql>
     </changeSet>
+    <changeSet author="admin" id="2">
+        <sql>
+        CREATE TABLE Feedback (
+        id integer AUTO_INCREMENT,
+        title varchar(100),
+        type varchar(50),
+        description varchar(255),
+        recommendationRating int,
+        user_id varchar(255),
+        PRIMARY KEY (id),
+        FOREIGN KEY (user_id) references User(id)
+        );
+        </sql>
+    </changeSet>
 </databaseChangeLog>

@@ -29,4 +29,5 @@ Router.map(function () {
   dashboardRoutes(this);
   dashboardCollectionRoutes(this);
   dashboardPrintRoutes(this);
+  this.route('feedback');
 });
