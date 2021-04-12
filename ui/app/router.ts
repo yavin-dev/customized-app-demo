@@ -29,7 +29,7 @@ Router.map(function () {
   dashboardRoutes(this);
   dashboardCollectionRoutes(this);
   dashboardPrintRoutes(this);
-  
+
   // Custom routes
   this.route('feedback');
 });
