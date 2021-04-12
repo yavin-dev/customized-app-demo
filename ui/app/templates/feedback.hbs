@@ -1,0 +1,71 @@
+{{!-- Copyright 2021 Yahoo Holdings Inc. Licensed under the terms of the MIT license. See accompanying LICENSE.md file for terms. --}}
+{{page-title "Feedback"}}
+
+<div class="container m-t-30 m-b-40">
+  <div class="row">
+    <div class="xs-col-3-3 sm-col-3-3 md-col-2-3 lg-col-2-3 xl-col-2-3">
+
+      <h2>Help Us Improve</h2>
+
+      <DenaliInputGroup @label="Please provide a descriptive title for your feedback" @isStacked={{true}}
+        class="m-t-20 w-full">
+        <DenaliInput
+          type="text"
+          placeholder="Example: Missing Report"
+          @wrapperClass="w-full"
+          {{on "input" this.setTitle}}
+        />
+      </DenaliInputGroup>
+
+      <DenaliInputGroup @label="Please select a feedback category" @isStacked={{true}} class="m-t-20">
+        <PowerSelect
+          @options={{array "Data Quality Issue" "Feature Request" "Encountered Error" "Unexpected Behavior"}}
+          @selected={{this.model.type}}
+          @placeholder="Feedback Category"
+          @onChange={{this.setType}}
+          @triggerClass="w-full" as |item|
+        >
+          {{item}}
+        </PowerSelect>
+      </DenaliInputGroup>
+
+      <DenaliInputGroup @label="Please describe your feedback in detail" @isStacked={{true}} class="m-t-20">
+        <DenaliTextArea
+          placeholder="Description"
+          @wrapperClass="w-full"
+          {{on "input" this.setDescription}}
+        />
+      </DenaliInputGroup>
+
+      <hr class="m-y-30">
+
+      <DenaliInputGroup
+        @label="How likely are you to recommend Yavin Custom App to a friend or colleague?"
+        @isStacked={{true}}
+        class="m-t-20"
+      >
+        <DenaliToggle
+          @onChange={{this.setRating}}
+          @activeOption={{this.model.recommendationRating}}
+          @options={{array 1 2 3 4 5 6 7 8 9 10}}
+          as |item|
+        >
+          {{item}}
+        </DenaliToggle>
+      </DenaliInputGroup>
+
+      <hr class="m-y-30">
+    </div>
+  </div>
+  <div class="row">
+    <div class="xs-col-1-1">
+      <DenaliButton
+        @isLoading={{this.model.isSaving}}
+        disabled={{this.model.isSaving}}
+        {{on "click" this.submit}}
+      >
+        Submit
+      </DenaliButton>
+    </div>
+  </div>
+</div>
