@@ -8,15 +8,19 @@ import com.yahoo.elide.annotation.CreatePermission
 import com.yahoo.elide.annotation.DeletePermission
 import com.yahoo.elide.annotation.Include
 import com.yahoo.elide.annotation.UpdatePermission
+import com.yahoo.navi.ws.models.beans.User
 import com.yahoo.navi.ws.models.checks.DefaultEverybodyCheck.Companion.EVERYBODY
 import com.yahoo.navi.ws.models.checks.DefaultNobodyCheck.Companion.NOBODY
-import com.yahoo.navi.ws.models.beans.User
+import org.hibernate.annotations.CreationTimestamp
+import java.util.Date
+import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
 import javax.persistence.GenerationType
 import javax.persistence.Id
 import javax.persistence.ManyToOne
-
+import javax.persistence.Temporal
+import javax.persistence.TemporalType
 
 @Entity
 @Include(type = "feedbacks")
@@ -35,6 +39,12 @@ class Feedback {
     var type: String? = null
 
     var recommendationRating: Int = 0
+
+    @CreationTimestamp
+    @Column(columnDefinition = "timestamp default current_timestamp")
+    @Temporal(TemporalType.TIMESTAMP)
+    @UpdatePermission(expression = NOBODY)
+    var createdOn: Date? = null
 
     @ManyToOne
     var user: User? = null

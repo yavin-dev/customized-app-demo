@@ -16,22 +16,22 @@ export default class FeedbackController extends Controller {
 
   @action
   setTitle({ target }: { target: HTMLInputElement }): void {
-    this.model.set('title', target?.value);
+    this.model.title = target?.value;
   }
 
   @action
   setDescription({ target }: { target: HTMLInputElement }): void {
-    this.model.set('description', target?.value);
+    this.model.description = target?.value;
   }
 
   @action
   setType(type: string): void {
-    this.model.set('type', type);
+    this.model.type = type;
   }
 
   @action
   setRating(rating: number): void {
-    this.model.set('recommendationRating', rating);
+    this.model.recommendationRating = rating;
   }
 
   @action
