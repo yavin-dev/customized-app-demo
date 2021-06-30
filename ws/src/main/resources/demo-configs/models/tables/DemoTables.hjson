@@ -100,7 +100,7 @@
           friendlyName: Release Year
           category: Date
           type: TIME
-          definition: '{{$$release_year}}'
+          definition: '{{$release_year}}'
           grains: [
             {
                type: YEAR
@@ -113,7 +113,7 @@
           cardinality: tiny
           category: Attributes
           type: TEXT
-          definition: '{{$$rating}}'
+          definition: '{{$rating}}'
         }
         {
           name: genres
@@ -121,7 +121,7 @@
           cardinality: small
           category: Attributes
           type: TEXT
-          definition: '{{$$listed_in}}'
+          definition: '{{$listed_in}}'
         }
         {
           name: description
@@ -129,7 +129,7 @@
           cardinality: large
           category: Attributes
           type: TEXT
-          definition: '{{$$description}}'
+          definition: '{{$description}}'
         }
       ]
       measures: [
@@ -145,14 +145,14 @@
           friendlyName: Total Seasons
           category: Stats
           type: INTEGER
-          definition: "sum(cast (case when {{$$duration}} like '% Seasons' then REPLACE({{$$duration}}, ' Seasons', '') else '0' end AS INT))"
+          definition: "sum(cast (case when {{$duration}} like '% Seasons' then REPLACE({{$duration}}, ' Seasons', '') else '0' end AS INT))"
         }
         {
           name: movie_duration
           friendlyName: Duration (in mins)
           category: Stats
           type: INTEGER
-          definition: "sum(cast (case when {{$$duration}} like '% min' then REPLACE({{$$duration}}, ' min', '') else '0' end AS INT))"
+          definition: "sum(cast (case when {{$duration}} like '% min' then REPLACE({{$duration}}, ' min', '') else '0' end AS INT))"
         }
       ]
     }
