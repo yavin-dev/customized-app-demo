@@ -10,9 +10,9 @@ plugins {
 
 repositories {
     maven {
-        url = uri("https://oss.jfrog.org/oss-snapshot-local")
+        url = uri("https://s01.oss.sonatype.org/content/repositories/snapshots/")
         content {
-            includeGroup("com.yahoo.navi")
+            includeGroup("dev.yavin")
         }
     }
     mavenCentral()
@@ -20,7 +20,7 @@ repositories {
 
 dependencies {
     implementation(project(":ui"))
-    implementation("com.yahoo.navi", "models", "0.2.0-beta-SNAPSHOT") {
+    implementation("dev.yavin", "models", "0.2.0-beta-SNAPSHOT") {
         exclude(group = "com.yahoo.elide", module = "elide-core")
     }
     implementation("org.springframework.boot:spring-boot-starter-security")
