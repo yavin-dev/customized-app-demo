@@ -23,7 +23,7 @@ import javax.persistence.Temporal
 import javax.persistence.TemporalType
 
 @Entity
-@Include(type = "feedbacks")
+@Include(name = "feedbacks")
 @CreatePermission(expression = EVERYBODY)
 @DeletePermission(expression = NOBODY)
 @UpdatePermission(expression = NOBODY)
